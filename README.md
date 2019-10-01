@@ -1,22 +1,10 @@
-# liri-node-app
-1. Clearly state the problem the app is trying to solve (i.e. what is it doing and why)
-2. Give a high-level overview of how the app is organized
-3. Give start-to-finish instructions on how to run the app
-4. Include screenshots, gifs or videos of the app functioning
-5. Contain a link to a deployed version of the app
-6. Clearly list the technologies used in the app
-7. State your role in the app development
-
-
 ### Overview
-Finally a way for users to search for their favorit movie, song or artist. Introducing "LIRI". Also known as "Language Interpretation and Recognition Interface".
+Introducing "LIRI". Also known as "Language Interpretation and Recognition Interface". We verify on the server end that the data is able to retrive information before sending to the client side. Finally a way for users to search for their favorite movie, songs or artist coming to town. 
 
 # LIRI APP
-LIRI,  is a server based, command line Node.js centered app that recieves user parameters and exports data. It has the ability of  communicating with the BandsInTown service, The Open Movie Database (OMDB) and also Spotify. Providing users with information regarding movies, concerts and music.
+LIRI, is a server based, command line Node.js centered app that recieves user parameters and exports data. It has the ability of communicating with the BandsInTown API service, The Open Movie Database (OMDB) and also Spotify API. Providing users with information regarding movies, concerts and music.
 
-Furthermore, LIRI offers a way for anyone to provide instructions via a local file on disk named "random.txt".
-
-The longhand name for LIRI is = Language Interpretation and Recognition Interface.
+Also, LIRI offers a way for anyone to provide instructions via a local file on disk named "random.txt".
 
 ### To use the LIRI app:
 
@@ -25,6 +13,16 @@ The longhand name for LIRI is = Language Interpretation and Recognition Interfac
 3. Run this following command for BandsInTown: node liri.js concert-this "artist".
 4. Run this following for Spotify Searches: node liri.js spotify-this-song "song"
 
-### Screenshots and Video Links below:
+### Screenshots:
+
+* [Link to the app](https://eddieallard.github.io/liri-node-app/)
+
+* [Spotify-this-song-Screenshot](ClassRepo_Local\Homework\Node - Liri App\liri-node-app\images\spotify this song.PNG)
+* [Concert-This-Screenshot](ClassRepo_Local\Homework\Node - Liri App\liri-node-app\images\concert this.PNG)
+* [Movie-This-Screenshot](ClassRepo_Local\Homework\Node - Liri App\liri-node-app\images\movie this.PNG)
+
+### Video Link:
+
+* [Video](https://drive.google.com/file/d/1UzOaQ1KEHx3l-MlhIP2IW1AK5YGKrauE/view?usp=sharing)
 
 
