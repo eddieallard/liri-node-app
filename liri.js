@@ -7,10 +7,11 @@ var moment = require('moment');
 var fs = require('fs');
 
 var whatToDo = process.argv[2];
-var UserInput = process.argv[3];
+var UserInput = process.argv.slice(3).join(" ");
 
 
-function spotifyThis(input) {
+
+function spotifyThis(UserInput) {
     spotify
         .search({
             type: 'track',
@@ -43,15 +44,16 @@ function concertThis() {
 function movieThis() {
     axios.get(`http://www.omdbapi.com/?t=${UserInput}&y=&plot=short&apikey=trilogy`)
     .then(function(response) {
+        console.log(response.data);
         response.forEach(movie => {
         console.log(`Title: ${movie.title}`);
-        console.log(`Title: ${movie.year}`);
-        console.log(`Title: ${movie.imdbRating}`);
-        console.log(`Title: ${movie.ratings.source.value}`);
-        console.log(`Title: ${movie.country}`);
-        console.log(`Title: ${movie.language}`);
-        console.log(`Title: ${movie.plot}`);
-        console.log(`Title: ${movie.actors}`);
+        console.log(`Year: ${movie.year}`);
+        console.log(`IMDB Rating: ${movie.imdbRating}`);
+        console.log(`Rotten Tomatoes Rating: ${movie.ratings.source.value}`);
+        console.log(`Country: ${movie.country}`);
+        console.log(`Language: ${movie.language}`);
+        console.log(`Plot: ${movie.plot}`);
+        console.log(`Actors: ${movie.actors}`);
         })
         .catch(function (err) {
             console.log(err);
@@ -81,21 +83,39 @@ function movieThis() {
 }
 
 function doWhatItSays() {
-    
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        var dataArray = data.split(",");
+        var personInput1 = dataArray[0];        
+        var personInput2 = dataArray[1];        
 
-}
+        if (personInput1 === "spotify-this-song") {
+            spotifySong(personInput2);
+        }
+        if (personInput1 === "Movie-this") {
+            movieChoice(personInput2);
+        }
+        if (personInput1 === "concert-this") {
+            theConcert(personInput2);
+        }
+
+})
 
 switch (whatToDo) {
+
     case "spotify-this-song":
-        spotifyThis();
+        spotifyThis(UserInput);
         break;
+
     case "movie-this":
-        movieThis();
+        movieThis(UserInput);
         break;
+
     case "concert-this":
-        concertThis();
+        concertThis(UserInput);
         break;
+
     case "do-what-it-says":
-        doWhatItSays();
+        doWhatItSays(UserInput);
         break;
+}
 };
