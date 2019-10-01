@@ -97,10 +97,10 @@ function doWhatItSays() {
         if (personInput1 === "concert-this") {
             theConcert(personInput2);
         }
-
+       
 })
 
-switch (whatToDo) {
+switch (UserInput) {
 
     case "spotify-this-song":
         spotifyThis(UserInput);
